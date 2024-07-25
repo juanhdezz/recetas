@@ -38,4 +38,7 @@ Para ejecutar la aplicacion , solamente debes ejecutar este comando en el mismo 
 ```bash
 python3 app.py
 ```
+### Ejemplo de uso 
+
+[Ver demo](https://github.com/juanhdezz/recetas/blob/main/static/imagenes/grabacion_recipescrapper.webm)
 
