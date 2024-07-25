@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Juan Hernandez Sánchez-Agesta">
+    <meta name="description" content="Recetas scrapping">
+    <meta name="keywords" content="HTML,CSS,JavaScript">
+    <title>RecipeScrapper | Juan Hernández</title>
+    <link rel="icon" href="../static/imagenes/favicon.svg" type="image/x-icon">
+    <!-- Links para CSS local y AOS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" data-aos="fade-down">
+        <div class="container">
+            <h1>RecipeScrapper</h1>
+            <nav class="nav">
+                <a href="#">Inicio</a>
+                <a href="#">Sobre Nosotros</a>
+                <a href="#">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container" data-aos="fade-up">
+        <h2>Buscar Recetas</h2>
+        <form method="POST" action="/">
+            <input type="text" name="ingrediente" placeholder="Introduce un ingrediente" required>
+            <button type="submit">Buscar</button>
+        </form>
+        
+        <section>
+            <h3>Recetas de ABC.es</h3>
+            <ul>
+                {% for receta in recetas_abc %}
+                    <li><a href="{{ receta.url }}" target="_blank">{{ receta.titulo }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+        
+        <section>
+            <h3>Recetas de Cocinatis</h3>
+            <ul>
+                {% for receta in recetas_cocinatis %}
+                    <li><a href="{{ receta.url }}" target="_blank">{{ receta.titulo }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" data-aos="fade-up">
+        <p>&copy; 2024 Juan Hernández Sánchez-Agesta. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+</body>
+</html>
