@@ -28,9 +28,15 @@ def busqueda_abc(ingrediente):
                 titulo = a_tag.text.strip()
                 link = a_tag.get("href")
                 full_link = link if link else None
+                
+                # Buscar la imagen asociada
+                img_tag = receta.find_next("img", class_="attachment-large size-large wp-post-image")
+                imagen_url = img_tag.get("src") if img_tag else None
+                
                 lista_recetas.append({
                     "titulo": titulo,
-                    "url": full_link
+                    "url": full_link,
+                    "imagen": imagen_url
                 })
         
         return lista_recetas
@@ -44,6 +50,13 @@ def busqueda_abc(ingrediente):
     
     return []
 
-# Buscar recetas con el ingrediente deseado
-ingrediente = "sopa de pollo"
-recetas_encontradas = busqueda_abc(ingrediente)
+# # Buscar recetas con el ingrediente deseado
+# ingrediente = "sopa de pollo"
+# recetas_encontradas = busqueda_abc(ingrediente)
+
+# # Imprimir los resultados
+# for receta in recetas_encontradas:
+#     print(f"Título: {receta['titulo']}")
+#     print(f"URL: {receta['url']}")
+#     print(f"Imagen: {receta['imagen']}")
+#     print("-" * 40)

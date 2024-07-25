@@ -29,6 +29,13 @@ Asegúrate de tener instaladas las siguientes dependencias:
 Puedes instalar las dependencias de Python utilizando `pip`:
 
 ```bash
-pip install Flask requests beautifulsoup4
+pip install Flask requests beautifulsoup4 
+```
+
+### Ejecucion
+
+Para ejecutar la aplicacion , solamente debes ejecutar este comando en el mismo directorio donde se encuentre app.py , y abrir el servidor local que te proprocionara la terminal al ejecutar el comando
+```bash
 python3 app.py
+```
 

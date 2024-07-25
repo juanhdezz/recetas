@@ -106,35 +106,41 @@ h3 {
     margin-bottom: 10px;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
-ul li {
+.card {
     background: #fff;
     border: 1px solid #ddd;
-    margin: 10px 0;
-    padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, transform 0.3s;
+    transition: transform 0.3s;
+    text-align: center;
+    padding: 15px;
 }
 
-ul li:hover {
-    background-color: #f9f9f9;
-    transform: scale(1.02);
+.card img {
+    max-width: 100%;
+    border-radius: 8px 8px 0 0;
 }
 
-ul li a {
+.card a {
     color: #4a90e2;
     text-decoration: none;
     font-size: 1.1rem;
-    transition: color 0.3s;
+    display: block;
+    margin-top: 10px;
 }
 
-ul li a:hover {
+.card a:hover {
     color: #357abd;
+}
+
+.card:hover {
+    transform: scale(1.02);
 }
 
 /* Footer Styles */
